@@ -1,0 +1,19 @@
+# Netlify configuration for Next.js
+[build]
+  command = "npm run build"
+  functions = "/.netlify/functions"
+  publish = ".next"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "npm run build"
+
+[context.deploy-preview]
+  command = "npm run build"
+
+[context.branch-deploy]
+  command = "npm run build"
